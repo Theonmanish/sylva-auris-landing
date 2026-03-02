@@ -5,7 +5,12 @@ const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-[#0B0F0D]/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="#home" className="text-sm font-semibold tracking-[0.28em] text-[#EAEAEA]">
+        <Link href="#home" className="flex items-center text-sm font-semibold tracking-[0.28em] text-[#EAEAEA]">
+          <img
+            src="/favicon.png"
+            alt="Sylva Auris logo"
+            className="h-15 w-15 rounded-full mr-2 object-cover"
+          />
           SYLVA AURIS
         </Link>
         <div className="hidden items-center gap-8 text-sm text-[#EAEAEA]/80 md:flex">

@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
             <p>
               Instagram:{" "}
               <a
-                href="https://www.instagram.com/sylva.auris"
+                href="https://www.instagram.com/sylva.auris/"
                 target="_blank"
                 rel="noreferrer"
                 className="underline decoration-[#C6A85C]/60 underline-offset-4 hover:text-[#C6A85C]"
