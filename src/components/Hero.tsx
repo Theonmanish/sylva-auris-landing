@@ -15,8 +15,8 @@ const Hero: React.FC = () => {
             LIVING OBJECTS OF QUIET LUXURY
           </p>
           <h1 className="animate-fade-in-delay-1 font-serif text-4xl leading-tight text-[#EAEAEA] sm:text-5xl lg:text-6xl">
-            Terrariums that listen to
-            <span className="block text-[#C6A85C]">the seasons.</span>
+            Curated Nature. Engineered to Thrive.
+            
           </h1>
           <p className="animate-fade-in-delay-2 max-w-xl text-sm leading-relaxed text-[#EAEAEA]/70 sm:text-base">
             Sylva Auris composes glass-bound ecosystems. Each
