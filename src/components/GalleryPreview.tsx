@@ -65,14 +65,6 @@ const GalleryPreview: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="mt-8 md:hidden">
-          <Link
-            href="/gallery"
-            className="inline-flex w-full justify-center rounded-full border border-[#EAEAEA]/25 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#EAEAEA] transition-colors hover:border-[#C6A85C] hover:text-[#C6A85C]"
-          >
-            Explore Full Gallery
-          </Link>
-        </div>
       </div>
     </section>
   );

@@ -31,13 +31,13 @@ const Footer: React.FC = () => {
           <div className="space-y-1">
             <p className="font-medium text-[#EAEAEA]/80">Contact</p>
             <div className="space-y-1">
-              <a href="mailto:hello@sylvaauris.studio" className="block hover:text-[#C6A85C]">
+              <a href="mailto:sylvaauris@gmail.com" className="block hover:text-[#C6A85C]">
                 Email
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/sylva.auris/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="block hover:text-[#C6A85C]"
               >
                 Instagram

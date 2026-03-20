@@ -31,7 +31,7 @@ const CareSection: React.FC = () => {
           </p>
           <div className="pt-4">
             <Link
-              href="https://sylva-auris-care-l9d9.vercel.app/"
+              href="https://care.sylvaauris.in"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex rounded-full bg-[#C6A85C] px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-black transition-colors hover:bg-[#d9be79]"

@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
         </div>
         <div className="flex items-center gap-3">
           <Link
-            href="https://sylva-auris-care-l9d9.vercel.app/"
+            href="https://care.sylvaauris.in"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border border-[#C6A85C]/40 bg-[#C6A85C]/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-[#EAEAEA] transition-colors hover:bg-[#C6A85C]/20"

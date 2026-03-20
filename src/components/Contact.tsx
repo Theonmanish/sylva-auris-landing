@@ -16,7 +16,8 @@ const Contact: React.FC = () => {
             Contact
           </h2>
           <p className="text-sm leading-relaxed text-[#EAEAEA]/75 sm:text-base">
-            Contact us for more information.
+            For enquiries about our collection, custom commissions, or care support, write to
+            us at sylvaauris@gmail.com or find us on Instagram @sylva.auris
           </p>
           <div className="space-y-1 text-sm text-[#EAEAEA]/80">
             <p>
@@ -33,7 +34,7 @@ const Contact: React.FC = () => {
               <a
                 href="https://www.instagram.com/sylva.auris/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="underline decoration-[#C6A85C]/60 underline-offset-4 hover:text-[#C6A85C]"
               >
                 @sylva.auris

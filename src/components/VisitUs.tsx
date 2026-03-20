@@ -19,6 +19,14 @@ const VisitUs: React.FC = () => {
             Sylva Auris terrariums are exclusively available at Soans Farm, Moodbidri, Karnataka.
             Experience the collection in person at our official retail location.
           </p>
+          <a
+            href="https://maps.google.com/?q=Soans+Farm+Moodbidri+Karnataka"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex underline decoration-[#C6A85C]/60 underline-offset-4 hover:text-[#C6A85C]"
+          >
+            Get Directions →
+          </a>
         </div>
         <div className="min-w-0 flex-1 overflow-hidden rounded-2xl border border-white/10 max-w-md lg:max-w-sm">
           <iframe
