@@ -19,10 +19,36 @@ export const metadata: Metadata = {
   },
   description:
     "Sylva Auris creates precision-crafted terrariums that blend engineered design with natural ecosystems.",
+  keywords: [
+    "Premium Terrariums Mangalore",
+    "Botanical Decor India",
+    "custom terrariums",
+    "luxury terrariums",
+    "glass terrariums India",
+    "indoor botanical decor",
+    "Sylva Auris",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    title: "Sylva Auris",
+    description:
+      "Premium terrariums and botanical decor in India, designed with precision and natural elegance.",
+    type: "website",
+  },
   icons: {
     icon: "/favicon.png",
   },
-}
+};
 export default function RootLayout({
   children,
 }: Readonly<{
