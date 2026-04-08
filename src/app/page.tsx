@@ -11,30 +11,43 @@ import FadeInOnScroll from "../components/FadeInOnScroll";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0B0F0D] text-[#EAEAEA] font-sans">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#0B0F0D] text-[#EAEAEA] font-sans">
+      <div className="living-bg" />
       <Navbar />
-      <main>
+      <main className="relative z-10 pt-20">
         <FadeInOnScroll>
           <Hero />
         </FadeInOnScroll>
-        <FadeInOnScroll>
-          <Description />
-        </FadeInOnScroll>
-        <FadeInOnScroll>
-          <CareSection />
-        </FadeInOnScroll>
-        <FadeInOnScroll>
-          <GalleryPreview />
-        </FadeInOnScroll>
-        <FadeInOnScroll>
-          <About />
-        </FadeInOnScroll>
-        <FadeInOnScroll>
-          <VisitUs />
-        </FadeInOnScroll>
-        <FadeInOnScroll>
-          <Contact />
-        </FadeInOnScroll>
+
+        <section>
+          <FadeInOnScroll>
+            <Description />
+          </FadeInOnScroll>
+
+          <FadeInOnScroll>
+            <CareSection />
+          </FadeInOnScroll>
+        </section>
+
+        <section>
+          <FadeInOnScroll>
+            <GalleryPreview />
+          </FadeInOnScroll>
+
+          <FadeInOnScroll>
+            <About />
+          </FadeInOnScroll>
+        </section>
+
+        <section>
+          <FadeInOnScroll>
+            <VisitUs />
+          </FadeInOnScroll>
+
+          <FadeInOnScroll>
+            <Contact />
+          </FadeInOnScroll>
+        </section>
       </main>
       <FadeInOnScroll>
         <Footer />

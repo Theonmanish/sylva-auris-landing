@@ -5,8 +5,10 @@ const Contact: React.FC = () => {
     <section
       id="contact"
       aria-labelledby="contact-sylva-auris"
-      className="border-b border-white/5 bg-[#0B0F0D]"
+      className="relative overflow-hidden border-b border-white/5 bg-[#0B0F0D]"
     >
+      <div className="pointer-events-none absolute -left-24 top-14 h-72 w-72 rounded-full bg-[#174b64]/15 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-8 h-72 w-72 rounded-full bg-[#132d51]/11 blur-3xl" />
       <div className="mx-auto max-w-4xl px-6 py-20 lg:py-24 lg:px-8">
         <div className="mb-8 space-y-3">
           <h2

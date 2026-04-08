@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,25 +12,44 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: {
-    default: "Sylva Auris",
+    default: "Sylva Auris | Artisan Bioactive Terrariums & Digital Plant Care",
     template: "%s | Sylva Auris",
   },
   description:
-    "Sylva Auris creates precision-crafted terrariums that blend engineered design with natural ecosystems.",
+    "Discover premium, handcrafted botanical terrariums and bioactive ecosystems by Sylva Auris. Based in Karnataka, we blend nature with technology through our digital care companion.",
   keywords: [
-    "Premium Terrariums Mangalore",
-    "Botanical Decor India",
-    "custom terrariums",
-    "luxury terrariums",
-    "glass terrariums India",
-    "indoor botanical decor",
+    "terrariums India",
+    "bioactive ecosystems",
     "Sylva Auris",
+    "premium botanical decor",
+    "Moodbidri plant shop",
+    "luxury terrariums",
+    "handcrafted terrariums",
+    "digital plant care",
+    "glass terrariums",
+    "botanical design",
+    "Soans Farm Moodbidri",
   ],
+  authors: [{ name: "Sylva Auris" }],
+  creator: "Sylva Auris",
+  publisher: "Sylva Auris",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -40,10 +59,34 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Sylva Auris",
-    description:
-      "Premium terrariums and botanical decor in India, designed with precision and natural elegance.",
     type: "website",
+    locale: "en_IN",
+    url: "https://sylvaauris.in",
+    title: "Sylva Auris | Artisan Bioactive Terrariums & Digital Plant Care",
+    description:
+      "Discover premium, handcrafted botanical terrariums and bioactive ecosystems by Sylva Auris. Based in Karnataka, we blend nature with technology through our digital care companion.",
+    siteName: "Sylva Auris",
+    images: [
+      {
+        url: "https://sylvaauris.in/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sylva Auris - Artisan Botanical Terrariums",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sylva Auris | Artisan Bioactive Terrariums & Digital Plant Care",
+    description:
+      "Discover premium, handcrafted botanical terrariums and bioactive ecosystems by Sylva Auris.",
+    images: ["https://sylvaauris.in/og-image.jpg"],
+    creator: "@sylva.auris",
+  },
+  metadataBase: new URL("https://sylvaauris.in"),
+  alternates: {
+    canonical: "https://sylvaauris.in",
   },
   icons: {
     icon: "/favicon.png",
@@ -57,7 +100,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>

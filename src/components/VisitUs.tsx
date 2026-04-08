@@ -5,8 +5,10 @@ const VisitUs: React.FC = () => {
     <section
       id="visit"
       aria-labelledby="visit-us"
-      className="border-b border-white/5 bg-[#0B0F0D]"
+      className="relative overflow-hidden border-b border-white/5 bg-[#0B0F0D]"
     >
+      <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#1a6d76]/14 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 top-8 h-72 w-72 rounded-full bg-[#092a39]/11 blur-3xl" />
       <div className="mx-auto max-w-6xl px-6 py-20 lg:flex lg:flex-row lg:items-start lg:gap-12 lg:py-24 lg:px-8">
         <div className="mb-8 flex-1 lg:mb-0">
           <h2
@@ -28,7 +30,7 @@ const VisitUs: React.FC = () => {
             Get Directions →
           </a>
         </div>
-        <div className="min-w-0 flex-1 overflow-hidden rounded-2xl border border-white/10 max-w-md lg:max-w-sm">
+        <div className="min-w-0 flex-1 max-w-md lg:max-w-sm">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1633.8546581342455!2d75.0000468947801!3d13.100252748314013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbb5532d0a50835%3A0x4fca633a88c45486!2sSoans%20Farm!5e0!3m2!1sen!2sin!4v1772281248789!5m2!1sen!2sin&maptype=satellite"
             width="100%"

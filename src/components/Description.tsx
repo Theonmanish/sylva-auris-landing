@@ -4,8 +4,10 @@ const Description: React.FC = () => {
   return (
     <section
       aria-labelledby="designed-ecosystems"
-      className="border-b border-white/5 bg-[#0B0F0D]"
+      className="relative overflow-hidden border-b border-white/5 bg-[#0B0F0D]"
     >
+      <div className="pointer-events-none absolute -left-24 top-16 h-72 w-72 rounded-full bg-[#083a29]/16 blur-3xl" />
+      <div className="pointer-events-none absolute -right-28 bottom-8 h-72 w-72 rounded-full bg-[#5a7a9e]/12 blur-3xl" />
       <div className="mx-auto max-w-4xl space-y-6 px-6 py-20 lg:py-24 lg:px-8">
         <h2
           id="designed-ecosystems"
