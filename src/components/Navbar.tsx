@@ -1,12 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
 const Navbar: React.FC = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <nav className="flex w-full items-center justify-between bg-[#0B0F0D]/65 py-3.5 pr-6 backdrop-blur-sm">
-        <Link href="#home" className="flex items-center px-7 text-sm font-semibold tracking-[0.28em] text-[#EAEAEA]">
-          SYLVA AURIS
+        <Link href="#home" className="flex items-center gap-3 px-7 text-sm font-semibold tracking-[0.28em] text-[#EAEAEA]">
+          <Image
+            src="/logo.png.png"
+            alt="Sylva Auris logo"
+            width={52}
+            height={52}
+            priority
+            className="h-10 w-10 rounded-full object-cover"
+          />
+          <span>SYLVA AURIS</span>
         </Link>
         <div className="ml-auto flex items-center gap-8 text-sm text-[#EAEAEA]/80">
           <Link href="#home" className="hidden transition-colors hover:text-[#EAEAEA] md:block">
