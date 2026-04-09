@@ -11,9 +11,13 @@ import React from "react";
 //   { id: 2, title: "Second Piece", src: sample2 },
 // ];
 //
-// The component will automatically use the title as the alt text.
+// The component will automatically generate descriptive alt text from the title.
 
 const images: Array<{id:number,title:string,src:string}> = [];
+
+function getLuxuryAltText(title: string): string {
+  return `Sylva Auris handcrafted bioactive terrarium - ${title} - featuring tropical moss, layered botanical composition, and a premium glass finish`;
+}
 
 const GalleryPreview: React.FC = () => {
   return (
@@ -49,7 +53,7 @@ const GalleryPreview: React.FC = () => {
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={image.src}
-                  alt={image.title}
+                  alt={getLuxuryAltText(image.title)}
                   className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-[0.82] group-hover:blur-[1px]"
                   loading="lazy"
                 />

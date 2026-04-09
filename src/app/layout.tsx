@@ -18,6 +18,49 @@ const playfair = Playfair_Display({
   weight: ["500", "600", "700"],
 });
 
+const brandAndBusinessSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Brand",
+      "@id": "https://sylvaauris.in/#brand",
+      name: "Sylva Auris",
+      legalName: "Sylva Auris Botanical Arts",
+      url: "https://sylvaauris.in",
+      description: "Premium artisan bioactive terrariums and digital botanical care.",
+      founder: {
+        "@type": "Person",
+        name: "[Your Name]",
+      },
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://sylvaauris.in/#localbusiness",
+      name: "Sylva Auris",
+      legalName: "Sylva Auris Botanical Arts",
+      url: "https://sylvaauris.in",
+      description: "Premium artisan bioactive terrariums and digital botanical care.",
+      founder: {
+        "@type": "Person",
+        name: "[Your Name]",
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Moodbidri",
+        addressRegion: "Karnataka",
+        addressCountry: "India",
+      },
+      areaServed: {
+        "@type": "Place",
+        name: "Moodbidri, Karnataka, India",
+      },
+      brand: {
+        "@id": "https://sylvaauris.in/#brand",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: {
     default: "Sylva Auris | Artisan Bioactive Terrariums & Digital Plant Care",
@@ -99,6 +142,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(brandAndBusinessSchema) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
       >

@@ -28,6 +28,20 @@ const About: React.FC = () => {
             intelligence to listen to change, never enough to distract from it.
           </p>
         </div>
+        <div className="animate-fade-in-delay-2 mt-10 border border-[#C6A85C]/25 bg-black/30 p-6 backdrop-blur-sm sm:p-7">
+          <p className="font-serif text-xs tracking-[0.24em] text-[#C6A85C]">TRUST SIGNALS</p>
+          <div className="mt-4 grid gap-3 text-xs text-[#EAEAEA]/80 sm:grid-cols-3 sm:text-sm">
+            <p className="border border-white/10 bg-black/30 px-4 py-3">
+              Moodbidri, Karnataka based botanical studio
+            </p>
+            <p className="border border-white/10 bg-black/30 px-4 py-3">
+              Botanical Artisan practice with short, curated collections
+            </p>
+            <p className="border border-white/10 bg-black/30 px-4 py-3">
+              Craft-led builds supported by ongoing digital care guidance
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -44,6 +44,14 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
+          <div className="space-y-1">
+            
+            <div className="space-y-1 text-[#EAEAEA]/70">
+              <p>Moodbidri, Karnataka studio</p>
+              <p>Botanical Artisan craftsmanship</p>
+              <p>Structured digital care companion</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="mt-4 pb-6 text-center text-sm text-[#EAEAEA]/40">

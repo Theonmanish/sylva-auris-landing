@@ -12,6 +12,10 @@ import React from "react";
 
 const images: Array<{ id: number; title: string; src: string }> = [];
 
+function getLuxuryAltText(title: string): string {
+  return `Sylva Auris handcrafted bioactive terrarium - ${title} - featuring tropical moss, layered botanical composition, and a premium glass finish`;
+}
+
 export const metadata = {
   title: "Gallery | Sylva Auris",
   description: "Explore our complete collection of handcrafted botanical terrariums and bioactive ecosystems. Each piece is uniquely composed and available exclusively at Soans Farm, Moodbidri.",
@@ -102,9 +106,7 @@ export default function GalleryPage() {
               <div className="flex items-center justify-center min-h-[60vh] text-center">
                 <div>
                   <p className="text-base text-[#EAEAEA]/60 mb-4">Gallery coming soon.</p>
-                  <p className="text-sm text-[#EAEAEA]/50">
-                    Add images to <code className="text-[#C6A85C]">src/components/gallery-images/</code> to populate this collection.
-                  </p>
+                  
                 </div>
               </div>
             ) : (
@@ -117,7 +119,7 @@ export default function GalleryPage() {
                     <div className="relative aspect-[4/5] overflow-hidden">
                       <img
                         src={image.src}
-                        alt={image.title}
+                        alt={getLuxuryAltText(image.title)}
                         className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-[0.82] group-hover:blur-[1px]"
                         loading="lazy"
                       />

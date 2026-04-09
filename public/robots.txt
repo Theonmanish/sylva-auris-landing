@@ -1,24 +1,10 @@
-# Robots.txt for Sylva Auris
-# Allow all search engines to crawl the site
+# robots.txt for sylvaauris.in
+# Explicitly allow all crawlers, including Googlebot, to crawl all pages and assets.
 
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /*.json$
-Disallow: /*?*sort=
-Disallow: /*?*filter=
 
-# Crawl delay
-Crawl-delay: 2
-
-# Sitemap
-Sitemap: https://sylvaauris.in/sitemap.xml
-
-# Google Search Console
 User-agent: Googlebot
 Allow: /
 
-# Specific rules for Bing
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
+Sitemap: https://sylvaauris.in/sitemap.xml
