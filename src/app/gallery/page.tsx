@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import TerrariumScroll from "../../components/TerrariumScroll";
 
 // Import gallery images here
 // import sample1 from "../../components/gallery-images/sample1.jpg";
@@ -52,7 +53,7 @@ export default function GalleryPage() {
       
       <header className="fixed inset-x-0 top-0 z-50">
         <nav className="flex w-full items-center justify-between bg-[#0B0F0D]/65 py-3.5 pr-6 backdrop-blur-sm">
-          <Link href="/#home" className="flex items-center px-3 text-sm font-semibold tracking-[0.28em] text-[#EAEAEA]">
+          <Link href="/#home" className="flex items-center px-10 text-sm font-semibold tracking-[0.38em] text-[#EAEAEA]">
             SYLVA AURIS
           </Link>
           <div className="ml-auto flex items-center gap-8 text-sm text-[#EAEAEA]/80">
@@ -80,8 +81,10 @@ export default function GalleryPage() {
         </nav>
       </header>
 
-      <main className="relative z-10 pt-20">
-        <section className="relative overflow-hidden border-b border-white/5 bg-[#0B0F0D]">
+      <main className="relative z-10">
+        <TerrariumScroll />
+        
+        <section className="relative overflow-hidden border-b border-white/5 bg-[#0B0F0D] pt-20">
           <div className="pointer-events-none absolute -left-28 top-24 h-80 w-80 rounded-full bg-[#4f6d46]/14 blur-3xl" />
           <div className="pointer-events-none absolute -right-24 top-8 h-72 w-72 rounded-full bg-[#cfb37a]/11 blur-3xl" />
           
