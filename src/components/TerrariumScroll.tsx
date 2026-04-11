@@ -277,7 +277,7 @@ export default function TerrariumScroll() {
   }, [images, isLoaded, progress]);
 
   const terrariumPanel = (
-    <div className="flex min-h-svh w-full flex-col overflow-hidden pt-4 lg:pt-15 lg:grid lg:min-h-svh lg:grid-cols-2 lg:gap-0">
+    <div className="flex min-h-svh w-full flex-col overflow-hidden lg:grid lg:min-h-svh lg:grid-cols-2 lg:gap-0">
       <div className="relative flex h-[55vh] w-full items-center justify-center overflow-hidden lg:h-auto lg:min-h-svh">
         {!isLoaded && (
           <div className="absolute z-10 text-xs font-light uppercase tracking-widest text-white/50">
@@ -321,7 +321,7 @@ export default function TerrariumScroll() {
             Nature in Motion
           </h2>
           <p className="mb-6 text-sm leading-relaxed text-[#EAEAEA]/75">
-            Watch as the terrarium ecosystem unfolds through this immersive visual journey. Each frame
+            Watch as our handcrafted terrarium ecosystem unfolds through this immersive visual journey. Each frame
             captures the intricate layers of moss, botanical specimens, and carefully curated elements that make
             Sylva Auris unique.
           </p>
