@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
             className="h-10 w-10 rounded-full object-cover"
           />
 
-          <span className="hidden sm:block">
+          <span className="block text-[10px] leading-none sm:text-sm">
             SYLVA AURIS
           </span>
         </Link>
