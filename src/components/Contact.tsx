@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
                 className="underline decoration-[#C6A85C]/60 underline-offset-4 hover:text-[#C6A85C]"
               >
                 sylvaauris@gmail.com
-              </a><br /><br />
+              </a>
               
             </p>
             <h3>Instagram</h3>
