@@ -12,12 +12,12 @@ const Navbar: React.FC = () => {
           className="flex items-center gap-3 text-sm font-medium tracking-[0.24em] text-[#EAEAEA]"
         >
           <Image
-            src="/logo.png.png"
+            src="/logo.png"
             alt="Sylva Auris logo"
-            width={52}
-            height={52}
+            width={50}
+            height={50}
             priority
-            className="h-10 w-10 rounded-full object-cover"
+            className="h-10 w-10 "
           />
 
           <span className="block text-[10px] leading-none sm:text-sm">
