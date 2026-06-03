@@ -80,6 +80,9 @@ export const metadata: Metadata = {
     "glass terrariums",
     "botanical design",
     "Soans Farm Moodbidri",
+    "Terrariums",
+    "Terrariums Mangalore",
+    "Mangalore plant shop"
   ],
   authors: [{ name: "Sylva Auris" }],
   creator: "Sylva Auris",
@@ -141,7 +144,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

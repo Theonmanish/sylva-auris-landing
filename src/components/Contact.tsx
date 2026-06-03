@@ -18,21 +18,21 @@ const Contact: React.FC = () => {
             Contact
           </h2>
           <p className="text-sm leading-relaxed text-[#EAEAEA]/75 sm:text-base">
-            For enquiries about our collection, custom commissions, or care support, write to
-            us at sylvaauris@gmail.com or find us on Instagram @sylva.auris
+            For enquiries or care support:
           </p>
           <div className="space-y-1 text-sm text-[#EAEAEA]/80">
+            <h3>Email</h3>
             <p>
-              Email:{" "}
               <a
                 href="mailto:sylvaauris@gmail.com"
                 className="underline decoration-[#C6A85C]/60 underline-offset-4 hover:text-[#C6A85C]"
               >
                 sylvaauris@gmail.com
-              </a>
+              </a><br /><br />
+              
             </p>
+            <h3>Instagram</h3>
             <p>
-              Instagram:{" "}
               <a
                 href="https://www.instagram.com/sylva.auris/"
                 target="_blank"

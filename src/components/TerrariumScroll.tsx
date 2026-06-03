@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useMotionValue } from "framer-motion";
 
-const SOURCE_FRAME_MAX = 151;
-const FRAME_STRIDE = 2;
+const SOURCE_FRAME_MAX = 80;
+const FRAME_STRIDE = 1;
 
 const frameIndices: number[] = (() => {
   const out: number[] = [];
@@ -51,7 +51,6 @@ export default function TerrariumScroll() {
   const [locked, setLocked] = useState(true);
 
   const progress = useMotionValue(0);
-  const hintOpacity = useTransform(progress, [0, 0.12, 0.88, 1], [1, 1, 1, 0.9]);
 
   /** After unlock: 1 = exited fully open, 0 = exited fully closed — used to restore inner scroll when re-locking. */
   const lastExitProgressRef = useRef<0 | 1>(0);
@@ -62,15 +61,15 @@ export default function TerrariumScroll() {
   /** Prevents instant unlock at p=0 on first paint (0 <= UNLOCK_REVERSE used to fire immediately). */
   const hasUserAdvancedScrollRef = useRef(false);
 
-  function stopAutoReturn() {
+  const stopAutoReturn = useCallback(() => {
     if (autoReturnRafRef.current !== null) {
       cancelAnimationFrame(autoReturnRafRef.current);
       autoReturnRafRef.current = null;
     }
     autoReturnActiveRef.current = false;
-  }
+  }, []);
 
-  function startAutoReturn() {
+  const startAutoReturn = useCallback(() => {
     const el = trapRef.current;
     if (!el || autoReturnActiveRef.current) return;
 
@@ -108,9 +107,9 @@ export default function TerrariumScroll() {
     };
 
     autoReturnRafRef.current = requestAnimationFrame(step);
-  }
+  }, [progress]);
 
-  const syncProgressFromTrap = useCallback(() => {
+  const syncProgressFromTrap = useCallback(function syncProgressFromTrap() {
     const el = trapRef.current;
     if (!el) return;
     const max = el.scrollHeight - el.clientHeight;
@@ -145,7 +144,7 @@ export default function TerrariumScroll() {
         startAutoReturn();
       }
     }
-  }, [progress]);
+  }, [progress, startAutoReturn]);
 
   useEffect(() => {
     const loadImages = async () => {
@@ -182,11 +181,7 @@ export default function TerrariumScroll() {
     return undefined;
   }, [locked]);
 
-  useEffect(() => {
-    return () => {
-      stopAutoReturn();
-    };
-  }, [stopAutoReturn]);
+  useEffect(() => stopAutoReturn, [stopAutoReturn]);
 
   useLayoutEffect(() => {
     if (!locked || !isLoaded) return;
@@ -205,7 +200,7 @@ export default function TerrariumScroll() {
       progress.set(0);
       hasUserAdvancedScrollRef.current = false;
     }
-  }, [locked, isLoaded]);
+  }, [locked, isLoaded, progress]);
 
   useEffect(() => {
     if (!locked || !isLoaded) return;
@@ -296,20 +291,7 @@ export default function TerrariumScroll() {
           }}
         />
 
-        {locked ? (
-          <motion.div
-            style={{ opacity: hintOpacity }}
-            className="pointer-events-none absolute bottom-6 max-w-[min(100%,28rem)] px-4 text-center text-[11px] uppercase leading-relaxed tracking-widest text-white/55 sm:text-xs lg:bottom-10"
-          >
-            Scroll inside this panel — page stays still. At the end, the terrarium returns to its original shape
-            before the page unlocks.
-          </motion.div>
-        ) : (
-          <div className="pointer-events-none absolute bottom-6 max-w-[min(100%,28rem)] px-4 text-center text-[11px] uppercase leading-relaxed tracking-widest text-white/55 sm:text-xs lg:bottom-10">
-            Scroll the page — when this section sits near the top again, scroll locks return for a smooth in-panel
-            animation.
-          </div>
-        )}
+        
       </div>
 
       <div className="relative flex flex-col items-center justify-center bg-[#0B0F0E] px-6 py-10 sm:px-8 lg:min-h-svh lg:px-10 lg:py-0">

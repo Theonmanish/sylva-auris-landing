@@ -18,14 +18,10 @@ const About: React.FC = () => {
         </h2>
         <div className="animate-fade-in-delay-1 space-y-4 text-sm leading-relaxed text-[#EAEAEA]/75 sm:text-base">
           <p>
-            Sylva Auris was founded from a quiet fascination with how small ecosystems hold light.
-            We work slowly, in short collections, treating each terrarium as a one-of-one object
-            rather than decor.
+            Sylva Auris was founded from a fascination with small ecosystems and the quiet beauty they bring to everyday spaces.
           </p>
           <p>
-            Our studio sits between horticulture and interface design. We pair traditional
-            glasswork and planting techniques with a restrained layer of technology—just enough
-            intelligence to listen to change, never enough to distract from it.
+            Working in limited collections, we create terrariums that combine traditional planting techniques with thoughtful design. Each piece is intended to be lived with, observed, and enjoyed over time.
           </p>
         </div>
         

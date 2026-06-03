@@ -18,8 +18,12 @@ const VisitUs: React.FC = () => {
             Visit Us
           </h2>
           <p className="max-w-xl text-sm leading-relaxed text-[#EAEAEA]/75 sm:text-base">
-            Sylva Auris terrariums are exclusively available at Soans Farm, Moodbidri, Karnataka.
-            Experience the collection in person at our official retail location.
+            Sylva Auris terrariums are available exclusively at:
+
+          </p>
+          <p className="max-w-xl text-sm leading-relaxed text-[#EAEAEA]/75 sm:text-base">
+            Soans Farm
+Moodbidri, Karnataka
           </p>
           <a
             href="https://maps.google.com/?q=Soans+Farm+Moodbidri+Karnataka"
@@ -31,17 +35,26 @@ const VisitUs: React.FC = () => {
           </a>
         </div>
         <div className="min-w-0 flex-1 max-w-md lg:max-w-sm">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1633.8546581342455!2d75.0000468947801!3d13.100252748314013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbb5532d0a50835%3A0x4fca633a88c45486!2sSoans%20Farm!5e0!3m2!1sen!2sin!4v1772281248789!5m2!1sen!2sin&maptype=satellite"
-            width="100%"
-            height="260"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Soans Farm location"
-            className="block w-full h-[260px] lg:h-[280px]"
-          />
+          <div className="flex h-[260px] flex-col justify-between rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] lg:h-[280px]">
+            <div>
+              <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.34em] text-[#C6A85C]">
+                Location
+              </p>
+              <h3 className="font-serif text-xl text-[#EAEAEA]">Soans Farm</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[#EAEAEA]/72">
+                Moodbidri, Karnataka
+                
+              </p>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Soans+Farm+Moodbidri+Karnataka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit rounded-full border border-[#C6A85C]/30 bg-[#C6A85C]/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-[#EAEAEA] transition-colors hover:bg-[#C6A85C]/20"
+            >
+              Open in Maps
+            </a>
+          </div>
         </div>
       </div>
     </section>

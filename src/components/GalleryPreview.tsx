@@ -1,17 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
-
-// keep your gallery picture files in `src/components/gallery-images`
-// then import them here and add entries to the array below. e.g.
-// import sample1 from "./gallery-images/sample1.jpg";
-// import sample2 from "./gallery-images/sample2.png";
-//
-// const images = [
-//   { id: 1, title: "Sample One", src: sample1 },
-//   { id: 2, title: "Second Piece", src: sample2 },
-// ];
-//
-// The component will automatically generate descriptive alt text from the title.
 
 const images: Array<{id:number,title:string,src:string}> = [];
 
@@ -34,14 +23,15 @@ const GalleryPreview: React.FC = () => {
             Our Collection
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-[#EAEAEA]/75 sm:text-base">
-            Each piece is a carefully composed ecosystem. Explore our current collection of handcrafted terrariums, 
-            where botanical artistry meets precise care.
+            Each Sylva Auris terrarium is a self-contained ecosystem, built from carefully selected plants, mosses, minerals, and glass.
+
+Designed to maintain balance over time, every piece is crafted to bring a sense of calm, texture, and living beauty into contemporary spaces.
           </p>
           <Link
             href="/gallery"
             className="btn-luxury inline-flex rounded-full bg-[#C6A85C] px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-black transition-all duration-300 hover:shadow-[0_0_24px_rgba(198,168,92,0.4)]"
           >
-            Explore Full Gallery
+            View Gallery
           </Link>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -51,10 +41,13 @@ const GalleryPreview: React.FC = () => {
               className="group relative overflow-hidden rounded-[1.75rem] border border-transparent bg-transparent transition-all duration-500 hover:border-white/15 hover:shadow-[0_22px_60px_rgba(0,0,0,0.28)]"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img
+                <Image
                   src={image.src}
                   alt={getLuxuryAltText(image.title)}
-                  className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-[0.82] group-hover:blur-[1px]"
+                  suppressHydrationWarning
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-[0.82] group-hover:blur-[1px]"
                   loading="lazy"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

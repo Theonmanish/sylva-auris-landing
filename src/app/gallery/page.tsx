@@ -1,17 +1,39 @@
 import Link from "next/link";
 import React from "react";
-import TerrariumScroll from "../../components/TerrariumScroll";
+import Image from "next/image";
+import fs from "fs";
+import path from "path";
 
-// Import gallery images here
-// import sample1 from "../../components/gallery-images/sample1.jpg";
-// import sample2 from "../../components/gallery-images/sample2.png";
-//
-// const images = [
-//   { id: 1, title: "Sample One", src: sample1 },
-//   { id: 2, title: "Second Piece", src: sample2 },
-// ];
+export const dynamic = "force-dynamic";
 
-const images: Array<{ id: number; title: string; src: string }> = [];
+const galleryDir = path.join(process.cwd(), "public", "galleryimages");
+const galleryFileCollator = new Intl.Collator(undefined, { numeric: true, sensitivity: "base" });
+
+function formatGalleryTitle(fileName: string): string {
+  const baseName = fileName.replace(/\.[^/.]+$/, "");
+  return baseName
+    .replace(/[_.-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+const images: Array<{ id: number; title: string; src: string }> = (() => {
+  try {
+    if (!fs.existsSync(galleryDir)) return [];
+    const files = fs
+      .readdirSync(galleryDir)
+      .filter((f) => /\.(jpe?g|png|webp|avif|gif)$/i.test(f));
+    files.sort((left, right) => galleryFileCollator.compare(left, right));
+    return files.map((file, i) => ({
+      id: i + 1,
+      title: formatGalleryTitle(file),
+      src: `/galleryimages/${encodeURIComponent(file)}`,
+    }));
+  } catch {
+    return [];
+  }
+})();
 
 function getLuxuryAltText(title: string): string {
   return `Sylva Auris handcrafted bioactive terrarium - ${title} - featuring tropical moss, layered botanical composition, and a premium glass finish`;
@@ -82,7 +104,7 @@ export default function GalleryPage() {
       </header>
 
       <main className="relative z-10">
-        <TerrariumScroll />
+        
         
         <section className="relative overflow-hidden border-b border-white/5 bg-[#0B0F0D] pt-20">
           <div className="pointer-events-none absolute -left-28 top-24 h-80 w-80 rounded-full bg-[#4f6d46]/14 blur-3xl" />
@@ -120,15 +142,18 @@ export default function GalleryPage() {
                     className="group relative overflow-hidden rounded-[1.75rem] border border-transparent bg-transparent transition-all duration-500 hover:border-white/15 hover:shadow-[0_22px_60px_rgba(0,0,0,0.28)]"
                   >
                     <div className="relative aspect-[4/5] overflow-hidden">
-                      <img
+                      <Image
                         src={image.src}
                         alt={getLuxuryAltText(image.title)}
-                        className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-[0.82] group-hover:blur-[1px]"
+                        suppressHydrationWarning
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-[1.05]"
                         loading="lazy"
                       />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                       <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-5 opacity-0 transition-all duration-500 group-hover:opacity-100">
-                        <span className="block font-serif text-sm tracking-[0.18em] text-[#F3EEDD] drop-shadow-[0_1px_14px_rgba(0,0,0,0.55)] sm:text-base">
+                        <span className="block text-sm tracking-[0.16em] text-[#F3EEDD] drop-shadow-[0_1px_14px_rgba(0,0,0,0.55)] sm:text-base">
                           {image.title}
                         </span>
                       </figcaption>
@@ -143,7 +168,7 @@ export default function GalleryPage() {
 
       <footer className="border-t border-white/5 bg-black">
         <div className="mx-auto max-w-6xl px-6 py-8 text-center text-xs tracking-wider text-[#EAEAEA]/60 lg:px-8">
-          <p>&copy; 2025 Sylva Auris. All rights reserved.</p>
+          <p>©  {new Date().getFullYear()}  Sylva Auris. All rights reserved.</p>
         </div>
       </footer>
     </div>

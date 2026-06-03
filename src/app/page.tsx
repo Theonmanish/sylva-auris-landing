@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Description from "../components/Description";
 import CareSection from "../components/CareSection";
 import GalleryPreview from "../components/GalleryPreview";
 import About from "../components/About";
@@ -20,9 +19,7 @@ export default function Home() {
         </FadeInOnScroll>
 
         <section>
-          <FadeInOnScroll>
-            <Description />
-          </FadeInOnScroll>
+          
 
           <FadeInOnScroll>
             <CareSection />

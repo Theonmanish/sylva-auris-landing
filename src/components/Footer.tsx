@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 
 const Footer: React.FC = () => {
@@ -10,49 +9,10 @@ const Footer: React.FC = () => {
             SYLVA AURIS
           </p>
           <p className="max-w-sm">
-            Handcrafted terrariums with an intelligent, seasonal care companion.
+            Handcrafted terrariums with a personalized digital care companion.
           </p>
         </div>
-        <div className="flex flex-wrap gap-6 text-sm">
-          <div className="space-y-1">
-            <p className="font-medium text-[#EAEAEA]/80">Explore</p>
-            <div className="space-y-1">
-              <Link href="#home" className="block hover:text-[#C6A85C]">
-                Home
-              </Link>
-              <Link href="#about" className="block hover:text-[#C6A85C]">
-                About
-              </Link>
-              <Link href="/gallery" className="block hover:text-[#C6A85C]">
-                Gallery
-              </Link>
-            </div>
-          </div>
-          <div className="space-y-1">
-            <p className="font-medium text-[#EAEAEA]/80">Contact</p>
-            <div className="space-y-1">
-              <a href="mailto:sylvaauris@gmail.com" className="block hover:text-[#C6A85C]">
-                Email
-              </a>
-              <a
-                href="https://www.instagram.com/sylva.auris/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:text-[#C6A85C]"
-              >
-                Instagram
-              </a>
-            </div>
-          </div>
-          <div className="space-y-1">
-            
-            <div className="space-y-1 text-[#EAEAEA]/70">
-              <p>Moodbidri, Karnataka studio</p>
-              <p>Botanical Artisan craftsmanship</p>
-              <p>Structured digital care companion</p>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <div className="mt-4 pb-6 text-center text-sm text-[#EAEAEA]/40">
         © {new Date().getFullYear()} Sylva Auris. All rights reserved.
